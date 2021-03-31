@@ -17,6 +17,8 @@ navbar-links:
   About Me: "aboutme"
   Resources:
     - CodeTips: "https://www.codetips.co.uk"
+    - Cheatsheets: "/cheatsheets/"
+    - Example Commands: "/example-commands/"
   Author's home: "https://www.simondrake.dev"
 
 # --- Logo --- #
