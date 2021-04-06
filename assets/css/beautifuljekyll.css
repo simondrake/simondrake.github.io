@@ -993,3 +993,7 @@ pre {
   display: block;
   margin: 0 auto;
 }
+
+pre[class*="language-"] {
+    padding-top: 0em;
+}
