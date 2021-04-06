@@ -1,0 +1,133 @@
+---
+layout: page
+permalink: /example-commands/command-line-bash/
+---
+<h1>Command Line Bash</h1>
+<h3><small class="text-muted">Examples of using Bash on the command line</small></h3>
+
+<br><br>
+
+<h5>Loop over an array of ints</h5>
+<pre><code class="language-bash">
+for i in {1,2,3}; do echo ${i}; done
+
+for i in {1,2,3}; do echo "$i"; done
+</code></pre>
+
+<br><br>
+
+<h5>Loop over a range of ints</h5>
+<pre><code class="language-bash">
+for i in {1..10}; do echo ${i}; done
+
+for i in {1..10}; do echo "$i"; done
+</code></pre>
+
+<br><br>
+
+<h5>Loop over an array of strings</h5>
+<pre><code class="language-bash">
+for s in a b c d e; do echo "$s"; done
+</code></pre>
+
+<br><br>
+
+<h5>Run command on an interval</h5>
+
+<p>Every 1 seconds</p>
+<pre><code class="language-bash">
+while sleep 1; do [cmd]; done
+
+while sleep 1; do echo "Hello"; echo "World"; done
+
+while true; do clear; ./runScript.sh; sleep 1; done
+</code></pre>
+
+<p>Every 1 milliseconds</p>
+<pre><code class="language-bash">
+while sleep 0.1; do [cmd]; done
+
+while sleep 0.1; do echo "Hello"; done
+</code></pre>
+
+<br><br>
+
+<h5>AWK</h5>
+
+<p>Print the 5th column</p>
+<pre><code class="language-bash">
+echo "This is a string made of columns" | awk '{print $5}'
+</code></pre>
+
+<p>Print the 5th column, with quotation marks, using <code>printf</code></p>
+<pre><code class="language-bash">
+echo "This is a string made of columns" | awk '{printf("\"%s\"", $5);}'
+</code></pre>
+
+<p>Print all columns after, and including, the 5th column</p>
+<pre><code class="language-bash">
+echo "This is a string made of columns" | awk '{ s = ""; for (i = 5; i <= NF; i++) s = s $i " "; print s }'
+</code></pre>
+
+<p>Change the field seperator</p>
+<pre><code class="language-bash">
+echo "This\is\a\string\with\a\different\seperator" | awk -F'\' '{print $4}'
+</code></pre>
+
+<br><br>
+
+<p>Pad filename with zeros</p>
+<p><small>Change spaces to "-" and pad the number at the end with 4 zeros</small></p>
+<pre><code class="language-bash">
+echo "This is a file name 3" | awk '{printf "%s-%s-%s-%s-%s-%05d", $1, $2, $3, $4, $5, $6}'
+</code></pre>
+
+<br><br>
+
+<h5>Sed</h5>
+
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Command</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>sed '/^$/d'</code></td>
+            <td>Remove blank lines</td>
+        </tr>
+        <tr>
+            <td><code>sed '/^ /d'</code></td>
+            <td>Remove lines starting with two spaces</td>
+        </tr>
+        <tr>
+            <td><code>sed 's/^textToRemove//g'</code></td>
+            <td>Remove text</td>
+        </tr>
+    </tbody>
+</table>
+
+<br><br>
+
+<h5>Grep</h5>
+
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Command</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>make run | grep --line-buffered -i "thing1\|thing2"</code></td>
+            <td>Grep a stream of data for <code>thing1</code> or <code>thing2</code>, case-insensitively</td>
+        </tr>
+    </tbody>
+</table>
