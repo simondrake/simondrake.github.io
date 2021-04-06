@@ -2,5 +2,598 @@
 layout: page
 permalink: /cheatsheets/vim/
 ---
-<h1>Cheatsheets </h1>
-<h3><small class="text-muted">Select a topic to get started</small></h3>
+<h1>Vim </h1>
+<h3><small class="text-muted">Vim is a highly configurable text editor</small></h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Verbs</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Verb</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>v</code></td>
+                        <td>Visual</td>
+                    </tr>
+                    <tr>
+                        <td><code>c</code></td>
+                        <td>Change</td>
+                    </tr>
+                    <tr>
+                        <td><code>d</code></td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td><code>y</code></td>
+                        <td>Yank</td>
+                    </tr>
+                    <tr>
+                        <td><code>m</code></td>
+                        <td>Mark</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Modifiers</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>i</code></td>
+                        <td>Inside</td>
+                    </tr>
+                    <tr>
+                        <td><code>a</code></td>
+                        <td>Around</td>
+                    </tr>
+                    <tr>
+                        <td><code>t</code></td>
+                        <td>Till (stop before)</td>
+                    </tr>
+                    <tr>
+                        <td><code>f</code></td>
+                        <td>Find (put cursor on)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Nouns</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Noun</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>w</code></td>
+                        <td>Word</td>
+                    </tr>
+                    <tr>
+                        <td><code>s</code></td>
+                        <td>Sentence</td>
+                    </tr>
+                    <tr>
+                        <td><code>p</code></td>
+                        <td>Paragraph</td>
+                    </tr>
+                    <tr>
+                        <td><code>b</code></td>
+                        <td>Block/Parentheses</td>
+                    </tr>
+                    <tr>
+                        <td><code>t</code></td>
+                        <td>Tag </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Searching/Navigating</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>f{c}</code></td>
+                        <td>Jump forward and put cursor on <code>{c}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>F{c}</code></td>
+                        <td>Jump back and put cursor on <code>{c}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>t{c}</c></code></td>
+                        <td>Jump forward and put cursor before <code>{c}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>T{c}</c></code></td>
+                        <td>Jump back and put cursor after <code>{c}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/{s}</code></td>
+                        <td>Search for <code>{s}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>*</code></td>
+                        <td>Search for other instances of the word under cursor</td>
+                    </tr>
+                    <tr>
+                        <td><code>n</code></td>
+                        <td>Next occurence</td>
+                    </tr>
+                    <tr>
+                        <td><code>N</code></td>
+                        <td>Previous occurence</td>
+                    </tr>
+                    <tr>
+                        <td><code>0</code></td>
+                        <td>Go to beginning of line</td>
+                    </tr>
+                    <tr>
+                        <td><code>$</code></td>
+                        <td>Go to end of line</td>
+                    </tr>
+                    <tr>
+                        <td><code>^</code></td>
+                        <td>Go to first non-blank character in line</td>
+                    </tr>
+                    <tr>
+                        <td><code>_</code></td>
+                        <td>Go to first non-blank character in line</td>
+                    </tr>
+                    <tr>
+                        <td><code>w</code></td>
+                        <td>Move forward one word</td>
+                    </tr>
+                    <tr>
+                        <td><code>b</code></td>
+                        <td>Move back one word</td>
+                    </tr>
+                    <tr>
+                        <td><code>e</code></td>
+                        <td>Move to the end of your word</td>
+                    </tr>
+                    <tr>
+                        <td><code>gg</code></td>
+                        <td>Go to top of file</td>
+                    </tr>
+                    <tr>
+                        <td><code>G</code></td>
+                        <td>Go to bottom of file</td>
+                    </tr>
+                    <tr>
+                        <td><code><C-i></code></td>
+                        <td>Previous location</td>
+                    </tr>
+                    <tr>
+                        <td><code><C-o></code></td>
+                        <td>Forward location</td>
+                    </tr>
+                    <tr>
+                        <td><code>:{l}</code></td>
+                        <td>Move to line number <code>{l}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>%</code></td>
+                        <td>Go to block close</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Editing</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>i</code></td>
+                        <td>Insert before cursor</td>
+                    </tr>
+                    <tr>
+                        <td><code>a</c></code></td>
+                        <td>Append after cursor</td>
+                    </tr>
+                    <tr>
+                        <td><code>I</code></td>
+                        <td>Insert at the beginning of line</td>
+                    </tr>
+                    <tr>
+                        <td><code>A</code></td>
+                        <td>Insert at the end of line</td>
+                    </tr>
+                    <tr>
+                        <td><code>o</code></td>
+                        <td>New line below</td>
+                    </tr>
+                    <tr>
+                        <td><code>O</code></td>
+                        <td>New line above</td>
+                    </tr>
+                    <tr>
+                        <td><code>r</code></td>
+                        <td>Replace character</td>
+                    </tr>
+                    <tr>
+                        <td><code>R</code></td>
+                        <td>Replace but keep typing</td>
+                    </tr>
+                    <tr>
+                        <td><code>C</code></td>
+                        <td>Change rest of line</td>
+                    </tr>
+                    <tr>
+                        <td><code>~</code></td>
+                        <td>Change case</td>
+                    </tr>
+                    <tr>
+                        <td><code>x</code></td>
+                        <td>Delete under cursor</td>
+                    </tr>
+                    <tr>
+                        <td><code>X</code></td>
+                        <td>Delete before cursor</td>
+                    </tr>
+                    <tr>
+                        <td><code>dd</code></td>
+                        <td>Delete line</td>
+                    </tr>
+                    <tr>
+                        <td><code>D</code></td>
+                        <td>Delete to end of line</td>
+                    </tr>
+                    <tr>
+                        <td><code>J</code></td>
+                        <td>Join the current line with the next</td>
+                    </tr>
+                    <tr>
+                        <td><code>u</code></td>
+                        <td>Undo</td>
+                    </tr>
+                    <tr>
+                        <td><code><C-r></code></td>
+                        <td>Redo</td>
+                    </tr>
+                    <tr>
+                        <td><code>.</code></td>
+                        <td>Repeat command</td>
+                    </tr>
+                    <tr>
+                        <td><code>yy</code></td>
+                        <td>Yank line</td>
+                    </tr>
+                    <tr>
+                        <td><code>{d}yy</code></td>
+                        <td>yank <code>{d}</code> lines</td>
+                    </tr>
+                    <tr>
+                        <td><code>p</code></td>
+                        <td>Paste after cursor</td>
+                    </tr>
+                    <tr>
+                        <td><code>P</code></td>
+                        <td>Paste before cursor</td>
+                    </tr>
+                    <tr>
+                        <td><code>edit!</code></td>
+                        <td>Reload buffer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Macros</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>q{c}</code></td>
+                        <td>Record macro and store in <code>{c}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>q</code></td>
+                        <td>Stop recording</td>
+                    </tr>
+                    <tr>
+                        <td><code>@{c}</code></td>
+                        <td>Replay macro stored in <code>{c}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>:5,10norm! @{c}</code></td>
+                        <td>Execute the macro stored in <code>{c}</code> on lines 5 through 10</td>
+                    </tr>
+                    <tr>
+                        <td><code>:5,$norm! @{c}</code></td>
+                        <td>Execute the macro stored in <code>{c}</code> on lines 5 through the end of the file</td>
+                    </tr>
+                    <tr>
+                        <td><code>:%norm! @{c}</code></td>
+                        <td>Execute the macro stored in <code>{c}</code> on all lines</td>
+                    </tr>
+                    <tr>
+                        <td><code>:g/pattern/norm! @{c}</code></td>
+                        <td>Execute the macro stored in <code>{c}</code> on all lines matching pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>:'<,'>norm! @{c}</code></td>
+                        <td>Execute the macro stored in <code>{c}</code> on visually selected lines</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Search and Replace</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>:%s/foo/bar/g</code></td>
+                        <td>Find each occurrence of <code>foo</code> (all lines), and replace it with <code>bar</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>:s/foo/bar/g</code></td>
+                        <td>Find each occurrence of <code>foo</code> (current line), and replace it with
+                            <code>bar</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>:%s/foo/bar/gc</code></td>
+                        <td>Change each <code>foo</code> to <code>bar</code>, but ask for confirmation first</td>
+                    </tr>
+                    <tr>
+                        <td><code>:%s/\<foo\>/bar/gc</code></td>
+                        <td>Change only whole words exactly matching <code>foo</code> to <code>bar</code>; ask for
+                            confirmation</td>
+                    </tr>
+                    <tr>
+                        <td><code>:%s/foo/bar/gci</code></td>
+                        <td>Change each <code>foo</code> (case insensitive) to <code>bar</code>; ask for confirmation
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>:%s/foo/bar/gcI</code></td>
+                        <td>Change each <code>foo</code> (case sensitive) to <code>bar</code>; ask for confirmation.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Splits</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>:vsp</code></td>
+                        <td>Vertical split</td>
+                    </tr>
+                    <tr>
+                        <td><code>:sp</code></td>
+                        <td>Horizontal split</td>
+                    </tr>
+                    <tr>
+                        <td><code>:resize 60</code></td>
+                        <td>Change height of window</td>
+                    </tr>
+                    <tr>
+                        <td><code>:res +5</code></td>
+                        <td>Change height of window</td>
+                    </tr>
+                    <tr>
+                        <td><code>:res -5</code></td>
+                        <td>Change height of window</td>
+                    </tr>
+                    <tr>
+                        <td><code>:vertical resize 80</code></td>
+                        <td>Change width of window</td>
+                    </tr>
+                    <tr>
+                        <td><code>:vertical resize +5</code></td>
+                        <td>Change width of window</td>
+                    </tr>
+                    <tr>
+                        <td><code>:vertical resize -5</code></td>
+                        <td>Change width of window</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Plugins</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Plugin</th>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://github.com/terryma/vim-multiple-cursors">multiple-cursors</a></td>
+                        <td><code>Shit + i</code></td>
+                        <td>Use when vim freezes</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/terryma/vim-multiple-cursors">multiple-cursors</a></td>
+                        <td><code><C-n></code></td>
+                        <td>Start multicursor</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/terryma/vim-multiple-cursors">multiple-cursors</a></td>
+                        <td><code><C-n></code></td>
+                        <td>Select next occurence</td>
+                    <tr>
+                        <td><a href="https://github.com/terryma/vim-multiple-cursors">multiple-cursors</a></td>
+                        <td><code><C-x></code></td>
+                        <td>Skip next occurence</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/terryma/vim-multiple-cursors">multiple-cursors</a></td>
+                        <td><code><C-p></code></td>
+                        <td>Previous occurence (go back)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/terryma/vim-multiple-cursors">multiple-cursors</a></td>
+                        <td>
+                            <A-n>
+                        </td>
+                        <td>Select all occurences</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/airblade/vim-gitgutter">vim-gitgutter</a></td>
+                        <td><code>]c</code></td>
+                        <td>Next hunk</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/airblade/vim-gitgutter">vim-gitgutter</a></td>
+                        <td><code>[c</code></td>
+                        <td>Previous hunk</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/neoclide/coc.nvim">coc</a></td>
+                        <td><code>K</code></td>
+                        <td>Show documentation</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/neoclide/coc.nvim">coc</a></td>
+                        <td><code><C-w-w></code></td>
+                        <td>Move to floating window (e.g. documentation)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>t</code></td>
+                        <td>Open file in new tab</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>i</code></td>
+                        <td>Open file in horizontal split window</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>s</code></td>
+                        <td>Open file in vertical split window</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>I</code></td>
+                        <td>Toggle hidden files</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>m</code></td>
+                        <td>Show menu</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>R</code></td>
+                        <td>Refresh the tree</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>?</code></td>
+                        <td>Toggle quick help</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>m-a</code></td>
+                        <td>Create file</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/preservim/nerdtree">NerdTree</a></td>
+                        <td><code>m-a{name}/</code></td>
+                        <td>Create directory (append <code>/</code> to name when creating)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Examples</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>d2w</code></td>
+                        <td>Delete two words</td>
+                    </tr>
+                    <tr>
+                        <td><code>cis</code></td>
+                        <td>Change inside sentence</td>
+                    </tr>
+                    <tr>
+                        <td><code>100i{s}<ESC></code></td>
+                        <td>Writes <code>{s}</code> one hundred times</td>
+                    </tr>
+                    <tr>
+                        <td><code>3.</code></td>
+                        <td>Repeat command three times</td>
+                    </tr>
+                    <tr>
+                        <td><code>:%!uniq</code></td>
+                        <td>Remove duplicate lines</td>
+                    </tr>
+                    <tr>
+                        <td><code>:%!jq .</code></td>
+                        <td>Prettify a JSON file</td>
+                    </tr>
+                    <tr>
+                        <td><code>{d}df{x}</code></td>
+                        <td>Deletes up to the <code>{d}</code>th character of <code>{x}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code><C-V>$A,<Esc></code></td>
+                        <td>Add a comma to the end of the line</td>
+                    </tr>
+                    <tr>
+                        <td><code>:g/^$/d</code></td>
+                        <td>Delete empty lines</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
