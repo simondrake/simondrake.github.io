@@ -239,7 +239,6 @@ To run the tests in debug mode, use `dlv test`
 ```
 $ dlv test pkg/biggestNum/*.go -test.v
 Type 'help' for list of commands.
-(dlv) b biggestNum.go:
 ```
 
 Then set a breakpoint as we did in the previous step
