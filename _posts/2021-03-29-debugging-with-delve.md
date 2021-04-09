@@ -29,6 +29,7 @@ If you use one of the popular Code Editors (e.g. VSCode, Golang) they will handl
 * Create our `pkg` directory - `mkdir -p pkg/biggestNum`
 * Add a `biggestNum.go` file in the `biggestNum` directory with the following contents:
 
+{:.line-numbers}
 ```go
 package biggestNum
 
