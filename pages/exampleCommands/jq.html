@@ -13,7 +13,8 @@ permalink: /example-commands/jq/
 <p>Select the array in <code>.items</code>, loop through and select the items which have a <code>.name</code> equal to
     <code>"thisname"</code>, then return the <code>.name</code> and <code>.status</code> </p>
 
-<pre><code class="language-bash" data-prismjs-copy="Copy">echo file.json | jq '.items | .[] | select(.name == "thisname") | {name: .name, status: .status}'</code></pre>
+<pre
+    class="command-line"><code class="language-bash" data-prismjs-copy="Copy">echo file.json | jq '.items | .[] | select(.name == "thisname") | {name: .name, status: .status}'</code></pre>
 
 <br><br>
 
@@ -21,7 +22,8 @@ permalink: /example-commands/jq/
 <p>Loop through an array and select the items which have a <code>.name</code> which contains <code>"someText"</code>,
     then return the <code>.name</code> and <code>.status</code>
 
-<pre><code class="language-bash">echo file.json | jq '.[] | select( .name | contains("someText") ) | {name: .name, status: .status}'</code></pre>
+<pre
+    class="command-line"><code class="language-bash">echo file.json | jq '.[] | select( .name | contains("someText") ) | {name: .name, status: .status}'</code></pre>
 
 <br><br>
 
@@ -29,14 +31,16 @@ permalink: /example-commands/jq/
 <p>Select the array in <code>.items</code>, loop through and select the items which have the specified key, then return
     the <code>.name</code></p>
 
-<pre><code class="language-bash">echo file.json | jq -r '.items | .[] | select(.a.path.to.an.array[]?.key != null) | .name'</code></pre>
+<pre
+    class="command-line"><code class="language-bash">echo file.json | jq -r '.items | .[] | select(.a.path.to.an.array[]?.key != null) | .name'</code></pre>
 
 <br><br>
 
 <h5>Filter with multiple conditions</h5>
 <p>Use <code>or</code> in a <code>select</code> statement, to filter on multiple conditions</p>
 
-<pre><code class="language-bash">echo file.json | jq -r '.items | .[] | select((.status == "Running") or (.status == "Scheduled") or .status == "ConfirmationNeeded") | .name'</code></pre>
+<pre
+    class="command-line"><code class="language-bash">echo file.json | jq -r '.items | .[] | select((.status == "Running") or (.status == "Scheduled") or .status == "ConfirmationNeeded") | .name'</code></pre>
 
 <br><br>
 
@@ -45,7 +49,8 @@ permalink: /example-commands/jq/
     <code>"some-text"</code>,
     then return the <code>.name</code>.
 
-<pre><code class="language-bash">echo file.json | jq -r '.items | .[] | select(.name | contains("some-text") | not) | .name'</code></pre>
+<pre
+    class="command-line"><code class="language-bash">echo file.json | jq -r '.items | .[] | select(.name | contains("some-text") | not) | .name'</code></pre>
 
 <br><br>
 
@@ -53,9 +58,10 @@ permalink: /example-commands/jq/
 <p>Assign <code>bar</code> to argument <code>foo</code> and then add the <code>"foo": "bar"</code> key/value to the
     object</p>
 
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo '{"hello": "world"}' | jq --arg foo bar '. + {foo: $foo}'
-
+</code></pre>
+<pre><code class="language-bash">
 {
   "hello": "world",
   "foo": "bar"
@@ -63,21 +69,24 @@ echo '{"hello": "world"}' | jq --arg foo bar '. + {foo: $foo}'
 </code></pre>
 
 <p>Preserve nested objects with <code>*</code></p>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo '{"hello": {"value": "world"}}' | jq '. * {"hello": {foo: ("bar")}}'
-
+</code></pre>
+<pre><code class="language-bash">
 {
   "hello": {
     "value": "world",
     "foo": "bar"
   }
 }
+
 </code></pre>
 
 <p>Using <code>+</code> will not preserve nested objects</p>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo '{"hello": {"value": "world"}}' | jq '. + {"hello": {foo: ("bar")}}'
-
+</code></pre>
+<pre><code class="language-bash">
 {
   "hello": {
     "foo": "bar"
@@ -89,9 +98,10 @@ echo '{"hello": {"value": "world"}}' | jq '. + {"hello": {foo: ("bar")}}'
 
 <h5>Concat strings</h5>
 
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo '{"hello": {"value": "world"}}' | jq --arg foo bar '. * {"hello": {foo: ("not" + $foo)}}'
-
+</code></pre>
+<pre><code class="language-bash">
 {
   "hello": {
     "value": "world",

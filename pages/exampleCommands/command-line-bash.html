@@ -8,7 +8,7 @@ permalink: /example-commands/command-line-bash/
 <br><br>
 
 <h5>Loop over an array of ints</h5>
-<pre><code class="language-bash">
+<pre class="command-line" data-output="2"><code class="language-bash">
 for i in {1,2,3}; do echo ${i}; done
 
 for i in {1,2,3}; do echo "$i"; done
@@ -17,7 +17,7 @@ for i in {1,2,3}; do echo "$i"; done
 <br><br>
 
 <h5>Loop over a range of ints</h5>
-<pre><code class="language-bash">
+<pre class="command-line" data-output="2"><code class="language-bash">
 for i in {1..10}; do echo ${i}; done
 
 for i in {1..10}; do echo "$i"; done
@@ -26,7 +26,7 @@ for i in {1..10}; do echo "$i"; done
 <br><br>
 
 <h5>Loop over an array of strings</h5>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 for s in a b c d e; do echo "$s"; done
 </code></pre>
 
@@ -35,7 +35,7 @@ for s in a b c d e; do echo "$s"; done
 <h5>Run command on an interval</h5>
 
 <p>Every 1 seconds</p>
-<pre><code class="language-bash">
+<pre class="command-line" data-output="2,4"><code class="language-bash">
 while sleep 1; do [cmd]; done
 
 while sleep 1; do echo "Hello"; echo "World"; done
@@ -44,7 +44,7 @@ while true; do clear; ./runScript.sh; sleep 1; done
 </code></pre>
 
 <p>Every 1 milliseconds</p>
-<pre><code class="language-bash">
+<pre class="command-line" data-output="2"><code class="language-bash">
 while sleep 0.1; do [cmd]; done
 
 while sleep 0.1; do echo "Hello"; done
@@ -55,30 +55,28 @@ while sleep 0.1; do echo "Hello"; done
 <h5>AWK</h5>
 
 <p>Print the 5th column</p>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo "This is a string made of columns" | awk '{print $5}'
 </code></pre>
 
 <p>Print the 5th column, with quotation marks, using <code>printf</code></p>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo "This is a string made of columns" | awk '{printf("\"%s\"", $5);}'
 </code></pre>
 
 <p>Print all columns after, and including, the 5th column</p>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo "This is a string made of columns" | awk '{ s = ""; for (i = 5; i <= NF; i++) s = s $i " "; print s }'
 </code></pre>
 
 <p>Change the field seperator</p>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo "This\is\a\string\with\a\different\seperator" | awk -F'\' '{print $4}'
 </code></pre>
 
-<br><br>
-
 <p>Pad filename with zeros</p>
 <p><small>Change spaces to "-" and pad the number at the end with 4 zeros</small></p>
-<pre><code class="language-bash">
+<pre class="command-line"><code class="language-bash">
 echo "This is a file name 3" | awk '{printf "%s-%s-%s-%s-%s-%05d", $1, $2, $3, $4, $5, $6}'
 </code></pre>
 

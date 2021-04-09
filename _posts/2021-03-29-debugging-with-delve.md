@@ -56,6 +56,8 @@ func isEven(num int) bool {
 * Run `go mod init example.com`
 * Change your `go.mod` file to the following, which basically imports our `biggestNum` package without having to push it up to GitHub (change directory names as required):
 
+
+{:.line-numbers}
 ```go
 module example.com
 
@@ -70,6 +72,7 @@ replace github.com/simondrake/biggestNum => ../biggest-num
 
 * Create a `main.go` file with the following contents (change import for `biggestNum` as required):
 
+{:.line-numbers}
 ```go
 package main
 
@@ -217,6 +220,7 @@ could not launch process: not an executable file
 
 But, delve does have a `test` subcommand we can use to run our tests in debug mode. So, first, let's add the following test under `biggestNum_test.go`:
 
+{:.line-numbers}
 ```go
 package biggestNum
 
