@@ -1,0 +1,40 @@
+---
+layout: page
+permalink: /example-commands/bash-scripts/
+---
+<h1>Bash Scripts</h1>
+<h3><small class="text-muted">Examples of using Bash in a script</small></h3>
+
+<br><br>
+
+<h5>Loop over an array, read in from a file</h5>
+<pre class="line-numbers"><code class="language-bash">
+#!/bin/bash
+
+# A BASH script makes the first command line argument available as $1, the second as $2 and so on.
+# The command run, exactly as it was called but without the command line arguments, is stored in $0.
+#
+# The dirname command returns the directory name part of a filename.
+# Note that the directory and/or file do not actually exists; dirname simply strips the last component of a file path.
+# For example, "dirname /a/b/c" will echo "/a/b", "dirname ../a/b/c" will echo "../a/b", "dirname ../" will echo "." and so on.
+#
+# The directory the BASH script is located in can be retrieved using "dirname $0"
+#
+# Note although the cd command is used, the script will not change directory and any other calls within it are still relative to the current working directory.
+#
+# This is useful when you need to reference a file that sits next to the script.
+cd $(dirname "$0")
+
+# Read in from fileName and store in varName
+IFS=$'\n' read -d '' -r -a varName < ./fileName
+
+# Loop through items in varName
+for i in "${varName[@]}"; do
+  echo "processing ${i}"
+
+ printf "\n\n\n"
+
+done
+</code></pre>
+
+<br><br>
