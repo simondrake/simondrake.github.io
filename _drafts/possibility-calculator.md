@@ -27,7 +27,7 @@ To calculate the number of possibilites, we times the length of the password by 
 
 For a password length of 10, the calculation is 70<sup>10</sup> (or 70 x 70 x 70 x 70 x 70 x 70 x 70 x 70 x 70 x 70).
 
-That gives us 2,824,752,500,000,000,000 possible combinations; that's nearly three Quintillion!
+That gives us 2,824,752,490,000,000,000 possible combinations; that's nearly three Quintillion!
 
 | Name | Number of Zeros | Groups of Three Zeros |
 | --- | -- | -- |
@@ -60,4 +60,25 @@ That gives us 2,824,752,500,000,000,000 possible combinations; that's nearly thr
 
 ## Code Solution
 
+In Go, calculating the Power of two numbers is incredibly simple with the built in `math.Pow` function. The only additional thing I've done is to use the `%f` formatting directive, for reasons explained in the code comment.
 
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	// Print the output without scientific notation
+
+	// fmt default is %v which, for floating numbers, is %g
+	// %g is %e for large exponents, %f otherwise.
+	fmt.Printf("%f\n", possibilityCalculator(70, 10))
+}
+
+func possibilityCalculator(characterSet float64, passwordLength float64) float64 {
+	return math.Pow(characterSet, passwordLength)
+}
+```
