@@ -8,7 +8,7 @@ permalink: /cheatsheets/vim/
 <div class="container">
     <div class="row">
         <div class="col">
-            <h4>Verbs</h4>
+            <h4><a id="verbs"></a>Verbs</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -41,7 +41,7 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4>Modifiers</h4>
+            <h4><a id="modifiers"></a>Modifiers</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -70,7 +70,7 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4>Nouns</h4>
+            <h4><a id="nouns"></a>Nouns</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -103,7 +103,7 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4>Searching/Navigating</h4>
+            <h4><a id="searching-navigating"></a>Searching/Navigating</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -200,7 +200,7 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4>Editing</h4>
+            <h4><a id="editing"></a>Editing</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -305,7 +305,7 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4>Macros</h4>
+            <h4><a id="macros"></a>Macros</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -350,7 +350,7 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4>Search and Replace</h4>
+            <h4><a id="search-and-replace"></a>Search and Replace</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -392,7 +392,7 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4>Splits</h4>
+            <h4><a id="split"></a>Splits</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -437,7 +437,32 @@ permalink: /cheatsheets/vim/
             </table>
         </div>
         <div class="col">
-            <h4><a id="plugins"></a>Tips and Tricks</h4>
+            <h4><a id="terminal"></a>Terminal</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>:term</code></td>
+                        <td>Open terminal</td>
+                    </tr>
+                    <tr>
+                        <td><code>:vsp | term</code></td>
+                        <td>Open terminal in a vertical split</td>
+                    </tr>
+                    <tr>
+                        <td><code>:sp | term</code></td>
+                        <td>Open terminal in a horizontal split</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4><a id="tips-and-tricks"></a>Tips and Tricks</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -449,6 +474,10 @@ permalink: /cheatsheets/vim/
                     <tr>
                         <td><code>:noautocmd w</code></td>
                         <td>Save file without executing Autocommand events</td>
+                    </tr>
+                    <tr>
+                        <td><code>"_d</code></td>
+                        <td>Use "black hole register" and delete</td>
                     </tr>
                 </tbody>
             </table>
