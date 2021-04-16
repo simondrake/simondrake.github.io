@@ -25,7 +25,7 @@ author: Simon Drake
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Microblog: "/microblog/"
+    - Microblog: "/microblog"
     - CodeTips: "https://www.codetips.co.uk"
     - Cheatsheets: "/cheatsheets/"
     - Example Commands: "/example-commands/"
