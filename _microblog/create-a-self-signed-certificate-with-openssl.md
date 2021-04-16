@@ -7,7 +7,6 @@ tags: []
 
 Create a self signed certificate, with OpenSSL, by running the following command.
 
-{:.line-numbers}
 ```bash
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
 ```
