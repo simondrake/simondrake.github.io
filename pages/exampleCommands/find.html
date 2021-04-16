@@ -1,0 +1,24 @@
+---
+layout: page
+permalink: /example-commands/find/
+---
+
+<h1>find</h1>
+<h3><small class="text-muted">A command-line utility that locates files based on some user-specified criteria
+        and then applies some requested action on each matched object</small></h3>
+
+<br><br>
+
+<h5>Find files based on Regex</h5>
+<pre class="command-line"><code class="language-bash" data-prismjs-copy="Copy">
+find . -type f -regextype posix-extended -regex '.*[0-9]\s.*'
+</code></pre>
+
+<br><br>
+
+<h5>Move files based on regex</h5>
+<p>Uses <code>find</code>'s <code>-exec</code> option, which replaces <code>{}</code> with each find result in turn, and
+    runs the command you give it</p>
+<pre class="command-line"><code class="language-bash" data-prismjs-copy="Copy">
+find . -type f -regextype posix-extended -regex '.*[0-9]\s.*' -exec mv -t path_B {} +
+</code></pre>

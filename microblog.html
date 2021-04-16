@@ -5,7 +5,7 @@ title: Microblog
 subtitle: A place for short articles and notes
 ---
 
-{% assign posts = site.microblog | reversed %}
+{% assign posts = site.microblog | reverse %}
 
 <div class="posts-list">
     {% for post in posts %}

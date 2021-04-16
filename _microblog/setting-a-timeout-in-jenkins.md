@@ -2,6 +2,7 @@
 layout: post
 title: Setting a timeout in Jenkins
 subtitle: Use groovy to set a timeout in a pipeline
+date: 2021-04-15
 tags: [jenkins, groovy]
 ---
 
