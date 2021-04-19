@@ -1,0 +1,49 @@
+---
+layout: page
+permalink: /cheatsheets/go/
+---
+<h1>Go </h1>
+<h3><small class="text-muted">Go is an open source programming language that makes it easy to build simple, reliable,
+        and efficient software</small></h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4><a id="testing"></a>Testing</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>go test ./... -run TestToRun</code></td>
+                        <td>Run a single test</td>
+                    </tr>
+                    <tr>
+                        <td><code>go test ./... -run TestToRun -testify.m SuiteTestToRun</code></td>
+                        <td>Run a single suite test</td>
+                    </tr>
+                    <tr>
+                        <td><code>go test -tags=integration ./...</td>
+                        <td>Run tests with a custom build tag</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<h5>Reuse a variable in <code>fmt</code> call</h5>
+
+<pre><code class="line-numbers language-go">
+func main() {
+	s := "World"
+
+	fmt.Printf(`Hello %[1]s Goodbye %[1]s`, s)
+}
+</code></pre>
