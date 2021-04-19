@@ -4,7 +4,7 @@ title: How to flash a custom ROM on a Samsung Note 9
 tags: [android]
 ---
 
-Learn how to install a custom ROM on a Samsung Note *
+Learn how to install a custom ROM on a Samsung Note
 
 ## Pre-requisites
 
