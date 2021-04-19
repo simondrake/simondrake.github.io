@@ -1,0 +1,59 @@
+---
+layout: page
+permalink: /cheatsheets/design-patterns/
+---
+<h1>Design Patterns</h1>
+
+<br>
+
+<h3><a id="factory-pattern"></a>Factory Pattern</h3>
+<p>Factory Method is a creational design pattern that provides an interface for creating objects.</p>
+
+<pre><code class="language-java line-numbers">
+//Empty vocabulary of actual object
+public interface IPerson
+{
+    string GetName();
+}
+
+public class Villager : IPerson
+{
+    public string GetName()
+    {
+        return "Village Person";
+    }
+}
+
+public class CityPerson : IPerson
+{
+    public string GetName()
+    {
+        return "City Person";
+    }
+}
+
+public enum PersonType
+{
+    Rural,
+    Urban
+}
+
+/// <summary>
+/// Implementation of Factory - Used to create objects
+/// </summary>
+public class Factory
+{
+    public IPerson GetPerson(PersonType type)
+    {
+        switch (type)
+        {
+            case PersonType.Rural:
+                return new Villager();
+            case PersonType.Urban:
+                return new CityPerson();
+            default:
+                throw new NotSupportedException();
+        }
+    }
+}
+</code></pre>
