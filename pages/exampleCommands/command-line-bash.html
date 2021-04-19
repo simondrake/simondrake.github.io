@@ -52,6 +52,19 @@ while sleep 0.1; do echo "Hello"; done
 
 <br><br>
 
+<h5>While loop with a multi-line string</h5>
+<p>Use a Here String to effectively create a for loop with multiline data</p>
+<pre class="line-numbers"><code class="language-bash">
+while read i
+do
+  echo "test$i"
+done <<< 'a
+b
+c'
+</code></pre>
+
+<br><br>
+
 <h5>AWK</h5>
 
 <p>Print the 5th column</p>
