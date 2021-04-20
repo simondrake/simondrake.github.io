@@ -38,3 +38,141 @@ done
 </code></pre>
 
 <br><br>
+
+<h5>Create a mini-CLI programme</h5>
+<pre class="line-numbers"><code class="language-bash">
+#!/bin/sh
+
+# Get the directory of the bash script
+cd $(dirname $BASH_SOURCE)
+DIR=$(pwd)
+
+COMMAND=$1
+RESOURCE_NAME=$2
+VERSION=$3
+
+FILE_CREATE=~/dir/aSubDIR/test-resource.json
+FILE_UPDATE=~/dir/aSubDIR/test-resource-update.json
+
+REGEX='help'
+
+# Perform a regex match of the string
+if [[ $COMMAND =~ $REGEX ]];
+then
+  echo "available commands:
+    - list
+    - listByOwner
+    - countByOwner
+    - approve {resource} {version}
+    - cancel {resource} {version}
+    - cancel-termination {resource}
+    - create {resource}
+    - delete {resource}
+    - get {resource}
+    - job-status {resource}
+    - history {resource}
+    - reject {resource} {version}
+    - update {resource}
+  "
+  exit 0;
+fi
+
+if [ "$COMMAND" == 'list' ]; then
+    # Print executed command to the terminal
+	set -x
+	cmd resources list
+    # Disable printing executed commands to the terminal
+	set +x
+	exit 0;
+fi
+
+if [ "$COMMAND" == 'listByOwner' ]; then
+    set -x
+	cmd resources list --verbose -o json | jq -r --arg USER "$2" '.[] | select(.createdBy==$USER) | .name'
+	set +x
+	exit 0;
+fi
+
+if [ "$COMMAND" == 'countByOwner' ]; then
+    set -x
+	cmd resources list --verbose -o json | jq '.[].createdBy' | sort | uniq -c | sort -r
+	set +x
+	exit 0;
+fi
+
+# If number of arguments is less than 2
+if [ $# -lt 2 ]
+  then
+    echo "usage: ./cmd-commands.sh {command} {resource-name} [version]"
+    exit 1;
+fi
+
+
+if [ "$COMMAND" == 'approve' ]; then
+        # If the string is null (empty)
+        if [ -z "$VERSION" ]
+                then
+                echo "Version not provided"
+                exit 1;
+        fi
+        set -x
+        cmd resources approve $RESOURCE_NAME --version $VERSION --reason "An optional reason for why this is approved"
+        set +x
+        exit 0;
+fi
+
+if [ "$COMMAND" == 'cancel' ]; then
+        if [ -z "$VERSION" ]
+                then
+                echo "Version not provided"
+                exit 1;
+        fi
+        set -x
+        cmd resources cancel $RESOURCE_NAME --version $VERSION --reason "A valid reason for why the update is being cancelled"
+        set +x
+        exit 0;
+fi
+
+if [ "$COMMAND" = 'cancel-termination' ]; then
+	set -x
+	cmd resources cancel-termination $RESOURCE_NAME --reason "TEST-1245 cancel termination"
+	set +x
+	exit 0;
+fi
+
+
+if [ "$COMMAND" == 'create' ]; then
+        set -x
+        cmd resources create $RESOURCE_NAME -f $FILE_CREATE --reason "TEST-0000 testing new commands"
+        set +x
+        exit 0;
+fi
+
+if [ "$COMMAND" == 'delete' ]; then
+        set -x
+        cmd resources delete $RESOURCE_NAME --reason "TEST-1234 deleting resource"
+        set +x
+        exit 0;
+fi
+
+if [ "$COMMAND" == 'get' ]; then
+        set -x
+        cmd resources get $RESOURCE_NAME
+        set +x
+        exit 0;
+fi
+
+if [ "$COMMAND" == 'history' ]; then
+        set -x
+        cmd resources history $RESOURCE_NAME
+        set +x
+        exit 0;
+fi
+
+if [ "$COMMAND" == 'update' ]; then
+        set -x
+        cmd resources update $RESOURCE_NAME -f $FILE_UPDATE --reason "TEST-0000 testing new commands - update"
+        set +x
+        exit 0;
+fi
+</code></pre>
