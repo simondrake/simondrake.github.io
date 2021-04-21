@@ -14,7 +14,7 @@ permalink: /example-commands/jq/
     <code>"thisname"</code>, then return the <code>.name</code> and <code>.status</code> </p>
 
 <pre
-    class="command-line"><code class="language-bash" data-prismjs-copy="Copy">echo file.json | jq '.items | .[] | select(.name == "thisname") | {name: .name, status: .status}'</code></pre>
+    class="command-line"><code class="language-bash" data-prismjs-copy="Copy">cat file.json | jq '.items | .[] | select(.name == "thisname") | {name: .name, status: .status}'</code></pre>
 
 <br><br>
 
@@ -23,7 +23,7 @@ permalink: /example-commands/jq/
     then return the <code>.name</code> and <code>.status</code>
 
 <pre
-    class="command-line"><code class="language-bash">echo file.json | jq '.[] | select( .name | contains("someText") ) | {name: .name, status: .status}'</code></pre>
+    class="command-line"><code class="language-bash">cat file.json | jq '.[] | select( .name | contains("someText") ) | {name: .name, status: .status}'</code></pre>
 
 <br><br>
 
@@ -32,7 +32,7 @@ permalink: /example-commands/jq/
     the <code>.name</code></p>
 
 <pre
-    class="command-line"><code class="language-bash">echo file.json | jq -r '.items | .[] | select(.a.path.to.an.array[]?.key != null) | .name'</code></pre>
+    class="command-line"><code class="language-bash">cat file.json | jq -r '.items | .[] | select(.a.path.to.an.array[]?.key != null) | .name'</code></pre>
 
 <br><br>
 
@@ -40,7 +40,7 @@ permalink: /example-commands/jq/
 <p>Use <code>or</code> in a <code>select</code> statement, to filter on multiple conditions</p>
 
 <pre
-    class="command-line"><code class="language-bash">echo file.json | jq -r '.items | .[] | select((.status == "Running") or (.status == "Scheduled") or .status == "ConfirmationNeeded") | .name'</code></pre>
+    class="command-line"><code class="language-bash">cat file.json | jq -r '.items | .[] | select((.status == "Running") or (.status == "Scheduled") or .status == "ConfirmationNeeded") | .name'</code></pre>
 
 <br><br>
 
@@ -50,7 +50,14 @@ permalink: /example-commands/jq/
     then return the <code>.name</code>.
 
 <pre
-    class="command-line"><code class="language-bash">echo file.json | jq -r '.items | .[] | select(.name | contains("some-text") | not) | .name'</code></pre>
+    class="command-line"><code class="language-bash">cat file.json | jq -r '.items | .[] | select(.name | contains("some-text") | not) | .name'</code></pre>
+
+<br><br>
+
+<h5>Get length of an array</h5>
+<pre class="command-line"><code class="language-bash">
+cat file.json | jq -r '.items | length'
+</code></pre>
 
 <br><br>
 
