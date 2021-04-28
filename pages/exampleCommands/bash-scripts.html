@@ -39,6 +39,29 @@ done
 
 <br><br>
 
+<h5>Rename files</h5>
+<pre class="line-numbers"><code class"language-bash">
+#!/bin/bash
+
+# For every file in the current directory
+for file in *; do
+        # Ignore files with a .sh extension
+        [[ $file == *.sh ]] && continue
+
+        # Use sed/regex to remove everything from '-' to '.' (inclusive) and replace with '.'
+        NewName=$(echo ${file} | sed 's/-.*\././')
+
+        # Change spaces to \[space]
+        NoSpaces=$(echo ${NewName} | sed 's/ /\\ /g')
+
+        echo "Moving '$file' to $NoSpaces"
+
+        mv "$file" "$NoSpaces"
+done
+</code></pre>
+
+<br><br>
+
 <h5>Create a mini-CLI programme</h5>
 <pre class="line-numbers"><code class="language-bash">
 #!/bin/sh
