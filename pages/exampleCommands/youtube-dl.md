@@ -32,6 +32,9 @@ youtube-dl -o 'Custom Title.mp4' [video url]
 youtube-dl -f bestvideo+bestaudio [video url]
 </code></pre>
 
+### Download a specific format
 
-
+<pre class="command-line"><code class="language-bash">
+youtube-dl -f m4a [video url]
+</code></pre>
 
