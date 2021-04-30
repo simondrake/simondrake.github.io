@@ -207,5 +207,5 @@ permalink: /cheatsheets/vim/
 [vim-surround]: https://github.com/tpope/vim-surround
 [vim-plug]: https://github.com/junegunn/vim-plug
 [vim-test]: https://github.com/vim-test/vim-test
-[vim-rhubard]: https://github.com/tpope/vim-rhubarb
+[vim-rhubarb]: https://github.com/tpope/vim-rhubarb
 [vim-fugitive]: https://github.com/tpope/vim-fugitive
