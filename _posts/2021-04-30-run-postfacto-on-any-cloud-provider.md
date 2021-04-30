@@ -8,7 +8,7 @@ tags: [DevOps]
 
 [Postfacto](https://github.com/pivotal/postfacto) is an excellent tool for Sprint Retrospectives, but the deployment instructions are limited to four platforms (at the time of writing).
 
-If you only need a simple installation, it's entirely possible to get Postfacto running on amy Cloud Provider, and using Docker.
+If you only need a simple installation, it's entirely possible to get Postfacto running on any Cloud Provider, and using Docker.
 
 ## What you'll need
 
@@ -122,7 +122,7 @@ docker-compose exec postfacto create-admin-user {email} {password}
 
 ### Create a retro
 
-* Go to `http://{server-ip}:300/admin/` and login using the email/password from the last step
+* Go to `http://{server-ip}:3000/admin/` and login using the email/password from the last step
 * Go to the `Retros` tab and create a retro with the required configuration
 * Use your new retro at `http://{server-ip}:3000/retros/{retro-slug}`
 
