@@ -62,6 +62,25 @@ done
 
 <br><br>
 
+<h5>rsync script</h5>
+<pre class="line-numbers"><code class="language-bash">
+#!/bin/bash
+
+# Find running rsync processes that aren't the one we spawn (grep) with this command
+RUNNING="$(ps -ef | grep rsync | grep --invert-match 'grep')"
+
+# Only spawn more rsync jobs if there aren't some already running
+if [[ -z "$RUNNING" ]]; then
+        echo "Running rsync commands"
+	
+	rsync -aqz --no-o --no-g --no-perms /source/files /destination > /dev/null 2>&1 &
+else
+        echo "Not running rsync commands, there is one already running"
+fi
+</code></pre>
+
+<br><br>
+
 <h5>Create a mini-CLI programme</h5>
 <pre class="line-numbers"><code class="language-bash">
 #!/bin/sh
