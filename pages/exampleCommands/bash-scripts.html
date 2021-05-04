@@ -71,9 +71,9 @@ RUNNING="$(ps -ef | grep rsync | grep --invert-match 'grep')"
 
 # Only spawn more rsync jobs if there aren't some already running
 if [[ -z "$RUNNING" ]]; then
-        echo "Running rsync commands"
-	
-	rsync -aqz --no-o --no-g --no-perms /source/files /destination > /dev/null 2>&1 &
+    echo "Running rsync commands"
+
+	rsync -aqz --remove-source-files --no-o --no-g --no-perms /source/files /destination > /dev/null 2>&1 &
 else
         echo "Not running rsync commands, there is one already running"
 fi
