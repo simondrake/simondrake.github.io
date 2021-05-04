@@ -17,3 +17,9 @@ This usually happens when a dependency container has a different ID than the one
 <pre class="command-line"><code class="language-bash">
 docker-compose up -d --force-recreate {service}
 </code></pre>
+
+To force recreate all containers, omit the service:
+
+<pre class="command-line"><code class="language-bash">
+docker-compose up -d --force-recreate
+</code></pre>
