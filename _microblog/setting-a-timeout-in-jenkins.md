@@ -15,6 +15,6 @@ In the `pipeline` step, choose `Pipeline script` and use the following to set a 
 
 stage ("Fake timeout") {
   echo 'Waiting 10 minutes for deployment to complete'
-  sleep 1 // seconds
+  sleep 60 * 10 // seconds
 }
 ```
