@@ -11,7 +11,8 @@ permalink: /example-commands/jq/
 
 <h5>Filter on Object key/value</h5>
 <p>Select the array in <code>.items</code>, loop through and select the items which have a <code>.name</code> equal to
-    <code>"thisname"</code>, then return the <code>.name</code> and <code>.status</code> </p>
+    <code>"thisname"</code>, then return the <code>.name</code> and <code>.status</code>
+</p>
 
 <pre
     class="command-line"><code class="language-bash" data-prismjs-copy="Copy">cat file.json | jq '.items | .[] | select(.name == "thisname") | {name: .name, status: .status}'</code></pre>
@@ -57,6 +58,13 @@ permalink: /example-commands/jq/
 <h5>Get length of an array</h5>
 <pre class="command-line"><code class="language-bash">
 cat file.json | jq -r '.items | length'
+</code></pre>
+
+<br><br>
+
+<h5>Group by and count</h5>
+<pre class="command-line"><code class="language-bash">
+echo '{"items": [ {"Priority": "High"},{"Priority": "High"},{"Priority": "High"},{"Priority": "High"},{"Priority": "Low"},{"Priority": "Low"},{"Priority": "Low"} ]}' | jq -r '.items | group_by(.Priority)[] | {Priority: .[0].Priority, Count: length}'
 </code></pre>
 
 <br><br>
