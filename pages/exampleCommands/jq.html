@@ -69,6 +69,14 @@ echo '{"items": [ {"Priority": "High"},{"Priority": "High"},{"Priority": "High"}
 
 <br><br>
 
+<h5>Select, Group by and count</h5>
+<pre class="command-line"><code class="language-bash">
+echo '{"items": [ {"Priority": "High"},{"Priority": "High"},{"Priority": "High"},{"Priority": "High"},{"Priority": "Medium"},{"Priority": "Medium"},{"Priority": "Low"},{"Priority": "Low"},{"Priority": "Low"} ]}' | jq -r '.items | .[] | select((.Priority == "High") or (.Priority == "Medium"))' | jq -s 'group_by(.Priority)[] | {Priority: .[0].Priority, Count: length}'
+</code></pre>
+
+<br><br>
+
+
 <h5>Add a field to an object</h5>
 <p>Assign <code>bar</code> to argument <code>foo</code> and then add the <code>"foo": "bar"</code> key/value to the
     object</p>
