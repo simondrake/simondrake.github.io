@@ -21,6 +21,9 @@ collections:
 # Name of website
 title: Simon Drake
 
+# Whether to remove ads or not
+remove-ads: true
+
 # Your name to show in the footer
 author: Simon Drake
 
@@ -150,7 +153,7 @@ gtag: "G-1VJHEFZYNJ"
 google_analytics: "271672131"
 
 # Google Tag Manager ID
-gtm: "G-1VJHEFZYNJ"
+# gtm: ""
 
 # Matomo (aka Piwik) Web statistics
 # Uncomment the following section to enable Matomo. The opt-out parameter controls
