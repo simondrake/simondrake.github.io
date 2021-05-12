@@ -57,8 +57,8 @@ permalink: /cheatsheets/vim/
 |`e`|Move to the end of your word|
 |`gg`|Go to top of file|
 |`G`|Go to bottom of file|
-|`&ltC-i>`|Previous location|
-|`&ltC-o>`|Forward location|
+|`<C-i>`|Previous location|
+|`<C-o>`|Forward location|
 |`:{l}`|Move to line number `{l}`|
 |`%`|Go to block close|
 
@@ -82,7 +82,7 @@ permalink: /cheatsheets/vim/
 |`D`|Delete to end of line|
 |`J`|Join the current line with the next|
 |`u`|Undo|
-|`&ltC-r>`|Redo|
+|`<C-r>`|Redo|
 |`.`|Repeat command|
 |`yy`|Yank line|
 |`{d}yy`|yank `{d}` lines|
@@ -151,15 +151,15 @@ permalink: /cheatsheets/vim/
 |Plugin|Command|Description|
 |:-----|:------|:----------|
 |[multiple-cursors][multiple-cursors]|`Shit + i`|Use when vim freezes|
-|[multiple-cursors][multiple-cursors]|`&ltC-n>`|Start multicursor|
-|[multiple-cursors][multiple-cursors]|`&ltC-n>`|Select next occurence|
-|[multiple-cursors][multiple-cursors]|`&ltC-x>`|Skip next occurence|
-|[multiple-cursors][multiple-cursors]|`&ltC-p>`|Previous occurence (go back)|
-|[multiple-cursors][multiple-cursors]|`&ltA-n>`|Select all occurences|
+|[multiple-cursors][multiple-cursors]|`<C-n>`|Start multicursor|
+|[multiple-cursors][multiple-cursors]|`<C-n>`|Select next occurence|
+|[multiple-cursors][multiple-cursors]|`<C-x>`|Skip next occurence|
+|[multiple-cursors][multiple-cursors]|`<C-p>`|Previous occurence (go back)|
+|[multiple-cursors][multiple-cursors]|`<A-n>`|Select all occurences|
 |[vim-gitgutter][vim-gitgutter]|`]c`|Next hunk|
 |[vim-gitgutter][vim-gitgutter]|`[c`|Previous hunk|
 |[coc][coc]|`K`|Show documentation|
-|[coc][coc]|`&ltC-w-w>`|Move to floating window (e.g. documentation)|
+|[coc][coc]|`<C-w-w>`|Move to floating window (e.g. documentation)|
 |[coc][coc]|`:CocUpdate`|Update plugins|
 |[NerdTree][NerdTree]|`t`|Open file in new tab|
 |[NerdTree][NerdTree]|`i`|Open file in horizontal split window|
