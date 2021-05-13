@@ -145,6 +145,7 @@ permalink: /cheatsheets/vim/
 |`:map <leader>rn`|Show mapping for `<leader>rn`|
 |`:map j`|Show mapping for `j`|
 |`:map <F5>`|Show mapping for `<F5>`|
+|`:help key-notation`|Display key notation-meaning|
 
 #### Plugins
 
