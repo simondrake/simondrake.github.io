@@ -76,6 +76,13 @@ echo '{"items": [ {"Priority": "High"},{"Priority": "High"},{"Priority": "High"}
 
 <br><br>
 
+<h5>Select fields starting with</h5>
+<p>Select all fields that start with <code>prefixA</code>, from within the <code>anotherField</code> object</p>
+<pre class="command-line"><code class="language-bash">
+echo '{"aField": {}, "anotherField": { "prefixAOne": "foo", "prefixATwo": "foo", "prefixAThree": "foo", "prefixBOne": "bar", "prefixBTwo": "bar" }, "lastField": true}' | jq -r '.anotherField | to_entries[] | select(.key|startswith("prefixA"))'
+</code></pre>
+
+<br><br>
 
 <h5>Add a field to an object</h5>
 <p>Assign <code>bar</code> to argument <code>foo</code> and then add the <code>"foo": "bar"</code> key/value to the
