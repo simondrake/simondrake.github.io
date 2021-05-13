@@ -151,12 +151,6 @@ permalink: /cheatsheets/vim/
 
 |Plugin|Command|Description|
 |:-----|:------|:----------|
-|[multiple-cursors][multiple-cursors]|`Shit + i`|Use when vim freezes|
-|[multiple-cursors][multiple-cursors]|`<C-n>`|Start multicursor|
-|[multiple-cursors][multiple-cursors]|`<C-n>`|Select next occurence|
-|[multiple-cursors][multiple-cursors]|`<C-x>`|Skip next occurence|
-|[multiple-cursors][multiple-cursors]|`<C-p>`|Previous occurence (go back)|
-|[multiple-cursors][multiple-cursors]|`<A-n>`|Select all occurences|
 |[vim-gitgutter][vim-gitgutter]|`]c`|Next hunk|
 |[vim-gitgutter][vim-gitgutter]|`[c`|Previous hunk|
 |[coc][coc]|`K`|Show documentation|
@@ -176,11 +170,6 @@ permalink: /cheatsheets/vim/
 |[vim-surround][vim-surround]|`cs<{`|Change surrounded `<>` to `{}`|
 |[vim-surround][vim-surround]|`cs<}`|Change surrounded `<>` to `{}` (without spaces)|
 |[vim-plug][vim-plug]|`:PlugUpdate`|Update plugins|
-|[vim-test][vim-test]|`:TestNearest`|Runs the test nearest to the cursor|
-|[vim-test][vim-test]|`:TestFile`|Runs all tests in the current file|
-|[vim-test][vim-test]|`:TestSuite`|Runs all tests in a test suite|
-|[vim-test][vim-test]|`:TestLast`|Runs the last test|
-|[vim-test][vim-test]|`:TestVisit`|Visits the test file from which you last run your tests|
 |[vim-rhubarb][vim-rhubarb]|`:GBrowse`|Open Git URL|
 |[vim-rhubarb][vim-rhubarb]|`:GBrowse!`|Copy Git URL to clipboard|
 |[vim-fugitive][vim-fugitive]|`:Git [command]`|Run git command|
