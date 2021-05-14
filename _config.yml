@@ -152,6 +152,9 @@ gtag: "G-1VJHEFZYNJ"
 # Fill in your Google Analytics ID to track your website using Google Analytics
 google_analytics: "271672131"
 
+# Fill in your Cloudflare Analytics beacon token to track your website using Cloudflare Analytics
+#cloudflare_analytics: ""
+
 # Google Tag Manager ID
 # gtm: ""
 
