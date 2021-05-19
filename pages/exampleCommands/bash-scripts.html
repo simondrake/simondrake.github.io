@@ -81,6 +81,70 @@ fi
 
 <br><br>
 
+<h5>Using command line flags</h5>
+<pre class="line-numbers"><code class="language-bash">
+#!/bin/bash
+
+# Get the directory of the bash script
+cd $(dirname $BASH_SOURCE)
+DIR=$(pwd)
+
+APP_ONE_ENV=prod
+APP_TWO_ENV=lve
+
+# If number of arguments is less than 10, the flags haven't been supplied
+if [ $# -lt 10 ]
+  then
+    echo "usage: ./script.sh -l {login true/false} -e {escalate true/false} -s {resourceid} -j {JIRA ticket} -u {requesting user}"
+    exit 1;
+fi
+
+if [[ $(appone config show-context) != ${APP_ONE_ENV} ]]; then
+  echo "appone not configured for correct environment"
+  exit 1
+fi
+
+if [[ $(apptwo -c) != ${APP_TWO_ENV} ]]; then
+  echo "apptwo not configured for correct environment"
+  exit 1
+fi
+
+while getopts l:e:s:j:u: flag
+do
+    case "${flag}" in
+        l) login=${OPTARG};;
+        e) escalation=${OPTARG};;
+        s) resourceid=${OPTARG};;
+        j) jiraticket=${OPTARG};;
+        u) username=${OPTARG};;
+    esac
+done
+
+if [ "$login" == "true" ]; then
+  # Login to appone
+  appone auth login
+
+  # Login to apptwo
+  apptwo auth login
+fi
+
+STATE=$(appone resource get "$resourceid" -o json | jq .state)
+
+if [ ! "$STATE" == "Deleted" ]; then
+    echo "Resource is not in a Deleted state"
+    exit 1
+fi
+
+if [ "$escalation" == "true" ]; then
+  ESCALATION_OUTPUT=$(apptwo escalate)
+
+  echo "$ESCALATION_OUTPUT"
+fi
+
+</code></pre>
+
+<br><br>
+
 <h5>Create a mini-CLI programme</h5>
 <pre class="line-numbers"><code class="language-bash">
 #!/bin/sh
