@@ -12,9 +12,7 @@ permalink: /cheatsheets/go/
 |`go test ./... -run TestToRun -testify.m SuiteTestToRun`|Run a single suite test|
 |`go test -tags=integration ./...`|Run tests with a custom build tag|
 
-<br><br>
-
-<h5>Reuse a variable in <code>fmt</code> call</h5>
+## Reuse a variable in `fmt` call
 
 <pre><code class="line-numbers language-go">
 func main() {
@@ -23,3 +21,9 @@ func main() {
 	fmt.Printf(`Hello %[1]s Goodbye %[1]s`, s)
 }
 </code></pre>
+
+## Run a single suite test
+
+As described in the the above table, single suite test can be run with the `go test ./... -run TestToRun -testify.m SuiteTestToRun` command.
+
+However, you should set the test path correctly (i.e. not `./...`) because if you run tests for a package that doesn't use `testify` you'll get a `flag provided but not defined` error.
