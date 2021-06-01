@@ -63,6 +63,48 @@ Check a PKCS#12 file (.pfx or .p12)
 openssl pkcs12 -info -in keyStore.p12
 </code></pre>
 
+Verify that the private key and certificate match
+
+<pre class="command-line"><code class="language-bash">
+openssl x509 -noout -modulus -in certificate.pem | openssl md5
+openssl rsa -noout -modulus -in ssl.key | openssl md5
+</code></pre>
+
+<small>_The output of these two commands must be exactly the same_</small>
+
+
+Check the dates are valid
+
+<pre class="command-line"><code class="language-bash">
+openssl x509 -noout -in certificate.pem -dates
+</code></pre>
+
+<small>_Ensure that the current date is between the certificate's start and end dates_</small>
+
+Check the validity of the certificate chain
+
+<pre class="command-line"><code class="language-bash">
+openssl verify -CAfile certificate-chain.pem certificate.pem
+</code></pre>
+
+<small>_If the response is `OK`, the check is valid_</small>
+
+Verify that the public keys contained in the private key file and the certificate are the same
+
+<pre class="command-line"><code class="language-bash">
+openssl x509 -in certificate.pem -noout -pubkey
+openssl rsa -in ssl.key -pubout
+</code></pre>
+
+<small>_The output of these two commands should be the same_</small>
+
+Check cert order
+
+<pre class="command-line"><code class="language-bash">
+openssl crl2pkcs7 -nocrl -certfile $CERT_FILE | openssl pkcs7 -print_certs -noout
+</code></pre>
+
+
 ## Debugging
 
 Check an MD5 hash of the public key to ensure that it matches with what is in a CSR or private key
