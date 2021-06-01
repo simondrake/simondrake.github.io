@@ -104,6 +104,12 @@ Check cert order
 openssl crl2pkcs7 -nocrl -certfile $CERT_FILE | openssl pkcs7 -print_certs -noout
 </code></pre>
 
+Decrypt the private RSA key
+
+<pre class="command-line"><code class="language-bash">
+openssl rsa -in server.pem -out server_unprotected.pem
+</code></pre>
+
 
 ## Debugging
 
