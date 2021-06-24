@@ -94,17 +94,23 @@ services:
     postgres:
         image: postgres
         environment:
-            - POSTGRES_PASSWORD=example
+            - POSTGRES_PASSWORD=changeme
+    redis:
+        image: redis:5.0.5-alpine
     postfacto:
         image: postfacto/postfacto
         ports:
             - "3000:3000"
         environment:
-            - DATABASE_URL=postgresql://postgres:example@postgres:5432/postgres
+            - DATABASE_URL=postgresql://postgres:changeme@postgres:5432/postgres
             - DISABLE_SSL_REDIRECT=true
-            - SECRET_KEY_BASE=iamasecret
-            - USE_POSTGRES_FOR_ACTION_CABLE=true
+            - SECRET_KEY_BASE=changeme
+            - USE_POSTGRES_FOR_ACTION_CABLE=false
+            - REDIS_URL=redis://redis:6379
         links:
+            - postgres
+            - redis
+        depends_on:
             - postgres
 ```
 
