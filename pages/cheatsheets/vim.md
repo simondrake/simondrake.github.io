@@ -146,6 +146,7 @@ permalink: /cheatsheets/vim/
 |`:map j`|Show mapping for `j`|
 |`:map <F5>`|Show mapping for `<F5>`|
 |`:help key-notation`|Display key notation-meaning|
+|`:e /path/to/file`|Open file|
 
 #### Plugins
 
