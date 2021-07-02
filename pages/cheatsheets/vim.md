@@ -157,6 +157,7 @@ permalink: /cheatsheets/vim/
 |[coc][coc]|`K`|Show documentation|
 |[coc][coc]|`<C-w-w>`|Move to floating window (e.g. documentation)|
 |[coc][coc]|`:CocUpdate`|Update plugins|
+|[coc][coc]|`:CocList diagnostics`|Show project diagnostic errors|
 |[NerdTree][NerdTree]|`t`|Open file in new tab|
 |[NerdTree][NerdTree]|`i`|Open file in horizontal split window|
 |[NerdTree][NerdTree]|`s`|Open file in vertical split window|
