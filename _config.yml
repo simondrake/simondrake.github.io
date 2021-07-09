@@ -10,10 +10,10 @@ collections:
     output: true
     layout: post
     permalink: /microblog/:title
-  til:
-    output: true
-    layout: post
-    permalink: /til/:title
+ #til:
+ #  output: true
+ #  layout: post
+ #  permalink: /til/:title
 
 
 # --- Required options --- #
@@ -33,7 +33,7 @@ navbar-links:
   About Me: "aboutme"
   Resources:
     - Microblog: "/microblog"
-    - TIL: "/til"
+#    - TIL: "/til"
     - Cheatsheets: "/cheatsheets/"
     - Example Commands: "/example-commands/"
     - CodeTips: "https://www.codetips.co.uk"
